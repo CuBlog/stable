@@ -1,25 +1,22 @@
 title: CuBlog
-description: A tidy Jekyll Blog
-baseurl: "cublog-dev"
+#The title you want to use in <title> tag.
+baseurl: "stable"
+#If your repository name is "[YOURUSERNAME].github.io", leave it a blank
+#Else, fill it up with your repository name
 url: "https://cublog.ryanincn11.me/"
+#If you've enabled custom domain,it should be the domain you used to custom.
+#Else, you can just fill it up with https://[YOURUSERNAME].github.io/
 permalink: pretty
 
 # Style Settings
 img: "/assets/img/home-bg.jpg"
+#The picture you want to show up in every pages.
 
 # Collections
 collections:
   posts:
     output: true
     permalink: /posts/:categories/:title
-
-# Site Metadata
-author: "Your Name"
-email: "your@email.here"
-timezone: "Europe/London"
-
-# Internationalization
-lang: en-GB
 
 # Feed Configuration
 plugins:
@@ -38,7 +35,8 @@ username:
   reddit: yourusername
 
 #Disqus Comment [Beta]
-disqus: cublog-dev
+#disqus: [your site shortname here]
+#If you've registered Disqus and create an site, place your site shortname up there
 
 # Build settings
 markdown: kramdown
