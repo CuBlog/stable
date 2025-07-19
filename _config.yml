@@ -1,0 +1,46 @@
+title: CuBlog
+description: A tidy Jekyll Blog
+baseurl: "cublog-dev"
+url: "https://cublog.ryanincn11.me/"
+permalink: pretty
+
+# Style Settings
+accent_color: "#4a86e8"
+img: "/assets/img/home-bg.jpg"
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /posts/:categories/:title
+
+# Site Metadata
+author: "Your Name"
+email: "your@email.here"
+timezone: "Europe/London"
+
+# Internationalization
+lang: en-GB
+
+# Feed Configuration
+plugins:
+  - jekyll-feed
+
+# Social Accounts
+username:
+  github: yourusername
+  facebook: yourusername
+  x: yourusername
+  instagram: yourusername
+  tiktok: yourusername
+  pinterest: yourusername
+  snapchat: yourusername
+  linkedin: yourusername
+  reddit: yourusername
+
+#Disqus Comment [Beta]
+disqus: cublog-dev
+
+# Build settings
+markdown: kramdown
+highlighter: rouge

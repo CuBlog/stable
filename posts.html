@@ -1,0 +1,15 @@
+---
+layout: default
+title: All Posts
+page-title: All Posts
+---
+
+{% for post in site.posts %}
+  <article class="post-excerpt">
+    <h3><a href="{{ post.url | relative_url}}">{{ post.title }}</a></h3>
+    <p class="meta">
+      <i class="fas fa-calendar"></i> {{post.date | date: "%B %-d, %Y" }}
+    </p>
+    {{ post.excerpt | default: post.content | strip_html | truncatewords: 30 }}
+  </article>
+{% endfor %}

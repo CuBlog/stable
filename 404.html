@@ -1,0 +1,21 @@
+---
+layout: default
+title: Page Not Found 
+page-title: Oops!
+page-decp: The page you're looking for doesn't exist.
+permalink: /404.html
+---
+
+<p>Redirect to the Home Page in <span id="countdown">5</span> seconds.</p>
+<script>
+  let seconds = 5;
+  const countdownEl = document.getElementById('countdown');
+  const timer = setInterval(() => {
+    seconds--;
+    countdownEl.textContent = seconds;
+    if(seconds <= 0) {
+      clearInterval(timer);
+      window.location.href = "{{ '/' | relative_url }}";
+    }
+  }, 1000);
+</script>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include head.html %}
+    <link rel="stylesheet" href="{{ '/assets/css/post.css' | relative_url }}">
+</head>
+
+<body>
+    {% include postheader.html %}
+    <main class="container">
+        <article class="post">
+            <div class="content">
+                {{ content }}
+            </div>
+        </article>
+    </main>
+    {% include disqus-comment.html %}
+    {% include footer.html %}
+</body>
+
+</html>

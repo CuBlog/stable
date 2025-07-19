@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4cc9f0;
+    --text-color: #333;
+    --light-gray: #f8f9fa;
+    --medium-gray: #e9ecef;
+    --dark-gray: #6c757d;
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-gray);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    padding: 1.2rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    z-index: 101;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text-color);
+    z-index: 101;
+}
+
+header nav {
+    display: flex;
+    gap: 1.8rem;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: var(--transition);
+}
+
+header nav a:hover {
+    color: var(--primary-color);
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+div.headpic {
+    overflow: hidden;
+    background: no-repeat center center;
+    width: auto;
+    height: 300px;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: relative;
+}
+
+main.container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    flex: 1;
+}
+
+main h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+    position: relative;
+    padding-bottom: 0.8rem;
+    top: 0.8rem;
+}
+
+main h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+main a.extra {
+    color: var(--accent-color);
+    text-decoration: none;
+    justify-content: center;
+    display: flex;
+}
+
+main a.link {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+article.post-excerpt {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-left: 4px solid transparent;
+}
+
+article.post-excerpt:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--accent-color);
+}
+
+article.post-excerpt h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+article.post-excerpt h3 a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+article.post-excerpt h3 a:hover {
+    color: var(--primary-color);
+}
+
+article.post-excerpt .meta {
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+article.post-excerpt p {
+    color: var(--dark-gray);
+    line-height: 1.7;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 2rem 5%;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+footer .social-links a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1.4rem;
+    transition: var(--transition);
+}
+
+footer .social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 1.5rem;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background-color: var(--white);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    transition: right 0.3s ease;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-left: 2rem;
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.mobile-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.8rem 0;
+    position: relative;
+    display: block;
+}
+
+.mobile-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.mobile-nav a:hover::after {
+    width: 50%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 98;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.headpic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.title-card {
+    background: transparent;
+    padding: 2rem;
+    max-width: 800px;
+    width: 100%;
+}
+
+.title-card h1 {
+    font-size: 2.8rem;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.title-card .subtitle {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .title-card h1 {
+        font-size: 2.2rem;
+    }
+
+    .title-card .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-card {
+        padding: 1.5rem;
+    }
+
+    .title-card h1 {
+        font-size: 1.8rem;
+    }
+
+    .title-card .subtitle {
+        font-size: 1rem;
+    }
+}
+
+div.disqus-area {
+    padding: 0;
+    padding-top: 3.75rem;
+    padding-bottom: 5.625rem;
+    padding-left: 1.875rem;
+    padding-right: 1.875rem;
+}

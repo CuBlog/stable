@@ -1,0 +1,33 @@
+---
+layout: default
+title: Blog Home
+page-title: CuBlog Template
+page-decp: An blog template with Jekyll
+---
+<h2>About Me</h2>
+
+<!--Edit your self introduction here↓-->
+<!--
+Please note: If you want to start up a new line, use the <br> tab.
+Or it will just display in the same line.
+-->
+
+This is the CuBlog Template. <br>
+If you like this blog,
+you can build yours by forking this project on <a href="https://www.github.com/CuBlog" class="link">GitHub</a>. 
+
+<!--Edit your self introduction there↑-->
+
+<h2>Latest Post</h2>
+
+{% if site.posts %}
+  <article class="post-excerpt">
+    <h3><a href="{{ site.posts[0].url | relative_url}}">{{ site.posts[0].title }}</a></h3>
+    <p class="meta">
+      <i class="fas fa-calendar"></i> {{site.posts[0].date | date: "%B %-d, %Y" }}
+    </p>
+    {{ site.posts[0].excerpt | default: site.posts[0].content | strip_html | truncatewords: 30 }}
+  </article>
+{% endif %}
+
+<a href="{{'/posts' | relative_url}} " class="extra">View more posts...</a>

@@ -1,0 +1,47 @@
+<header>
+    <h1>{{ site.title }}</h1>
+    <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+    <nav>
+        <a href="{{ './' | relative_url }}">Home</a>
+        <a href="{{ './posts' | relative_url }}">Posts</a>
+    </nav>
+</header>
+<div class="mobile-nav" id="mobileNav">
+    <a href="{{ './' | relative_url }}">Home</a>
+    <a href="{{ './posts' | relative_url }}">Posts</a>
+</div>
+<div class="overlay" id="overlay"></div>
+<div class="headpic" style="background-image:url('{{site.img | relative_url}}');">
+    <div class="headpic-container">
+        <div class="title-card">
+            {% if page.page-title %}<h1>{{ page.page-title }}</h1>{% endif %}
+            {% if page.page-decp %}<p class="subtitle">{{ page.page-decp }}</p>{% endif %}
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileNav = document.getElementById('mobileNav');
+      const overlay = document.getElementById('overlay');
+      menuToggle.addEventListener('click', function() {
+        mobileNav.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
+      });
+      overlay.addEventListener('click', function() {
+        mobileNav.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+      });
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+          mobileNav.classList.remove('active');
+          overlay.classList.remove('active');
+          document.body.classList.remove('no-scroll');
+        }
+      });
+    });
+  </script>
