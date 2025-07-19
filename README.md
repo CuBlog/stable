@@ -16,12 +16,13 @@
 
 To get started installing CuBlog/stable:
 
-1. **Fork the repository**
+1. [**Click here**](https://github.com/new?template_name=stable&template_owner=CuBlog) to create a new repository using this template 
 2. **Enable Jekyll**  
-   - Enable the GitHub Pages and GitHub Actions for build
+   - Using "GitHub Actions" as the GitHub Pages' source
    - Run the "Deploy CuBlog to GitHub Pages" workflow
 
-3. **Preview on the GitHub Pages**  
+3. **Preview on the GitHub Pages**
+4. Edit `_config.yml` to startup quickly!
 
 ## Reporting Issues
 
