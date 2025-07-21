@@ -10,7 +10,7 @@
 - Stable production-ready version
 - Thoroughly tested and verified
 - Source code licensed under the Apache License 2.0
-- Preview website: [cublog.ryanincn11.me/stable/](http://cublog.ryanincn11.me/stable/)
+- Preview website: [cublog.github.io/stable/](http://cublog.github.io/stable/)
 
 ## Installation & Usage
 
